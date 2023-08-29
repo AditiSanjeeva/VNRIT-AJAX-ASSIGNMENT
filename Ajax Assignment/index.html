@@ -2,45 +2,13 @@
 <html>
 <head>
     <title>Fetch API Data</title>
-    <h2>BEYOND KLASSES API</h2>
-    <style>
-       
-        .card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            display: inline-block;
-            width: 300px;
-        }
-        .card img {
-            max-width: 100%;
-            height: 300px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="aj.css">
 </head>
 <body>
+    <h2>BEYOND KLASSES API</h2>
     <div id="cards">
         <!-- Cards will be dynamically added here -->
     </div>
-
-    <script>
-        fetch('https://www.beyondklasses.com:8443/api/getnooflikesforfile')
-            .then(data => data.json())
-            .then(completedata => {
-                let data1 = "";
-                completedata.forEach(values => {
-                    data1 += `
-                    <div class="card">
-                        <img src="${values.filename}" alt="Art" class="images">
-                        <p class="Likes">${values.likes} likes</p>
-                        <p class="KidName">${values.kidName}</p>
-                    </div>`;
-                });
-                document.getElementById("cards").innerHTML = data1;
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    </script>
+    <script src="aj.js"></script>
 </body>
 </html>
